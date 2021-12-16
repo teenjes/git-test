@@ -34,7 +34,7 @@ ___
 ### Creating a Linked Machine Learning Decision Tree
 As a proof-of-concept, we demonstrate the applicability of a linked machine learning decision tree. Here, we lay out the steps necessary to generate your own decision tree for use for fungal species detection. <br>
 
-1. Obtain DNA sequence for the same region for a number of different species across the fungal kingdom, including the target species and several close relatives from the same family and genus, and filter for higher quality reads to improve the accuracy of training. Ensure you have the full taxonomic information for each species used<sup>1</sup> <br><br>
+1. Obtain DNA sequence for the same region for a number of different species across the fungal kingdom, including the target species and several close relatives from the same family and genus, and filter for higher quality reads to improve the accuracy of training. Ensure you have the full taxonomic information for each species used <br><br>
 2. Using a cladogram, identify the nodes where two or more taxa diverge, and note all samples that belong to each branch of the node. For each node, randomly subsample an equal number of reads from all species belonging to each branch, such that the number of subsampled reads for each branch at a node is equal, and representative of the samples belonging to that node  <br><br>
 3. Convert the DNA sequence for reads at a node to integer or one-hot encoding and pad each sequence using a null value to ensure all lengths are equivalent  <br><br>
 4. Randomly subsample 85% of the encoded data for use in training the models, and the other 15% for testing the models. Define the labels for each read so that each read has a label identifying the taxa it belongs to (eg. Ascomycota or Basidiomycota when training a model to distinguish between phyla)  <br><br>
@@ -47,3 +47,4 @@ As a proof-of-concept, we demonstrate the applicability of a linked machine lear
 <p align="center">
 An example path through the machine learning decision tree, highlighted in red, demonstrating how reads are passed down the tree from the kingdom-level classifier (distinguishes between phyla) to the genus-level classifier (distinguishes between species). Note that not all steps along the path are nodes, which can be remedied by increasing the diversity of taxa chosen for training. 
     </p>
+
